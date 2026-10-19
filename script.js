@@ -12,7 +12,8 @@
     entryScreen.hidden = true;
     document.body.classList.remove("entry-pending");
     pageRegions.forEach((region) => { region.inert = false; });
-    document.querySelector("main").focus();
+    window.scrollTo({ top: 0, behavior: "instant" });
+    document.querySelector("main").focus({ preventScroll: true });
   });
 })();
 

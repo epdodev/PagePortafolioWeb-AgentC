@@ -100,7 +100,7 @@ body.entry-pending { overflow: hidden; }
 .section-wrap { width: min(100% - 2rem, 70rem); margin-inline: auto; }
 .hero {
   display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(17rem, .8fr); align-items: center;
-  gap: clamp(2rem, 8vw, 7rem); padding-block: clamp(5rem, 12vw, 9rem) clamp(4rem, 8vw, 6rem);
+  gap: clamp(2rem, 8vw, 7rem); padding-block: clamp(2rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem);
 }
 .hero-main { min-width: 0; max-width: 45rem; }
 .eyebrow, .card-kicker {
@@ -180,7 +180,7 @@ h1 span { color: var(--accent); }
 }
 @media (max-width: 650px) {
   body { padding-top: 8.5rem; }
-  .hero { grid-template-columns: minmax(0, 1fr); align-items: start; gap: 2rem; padding-top: 4rem; }
+  .hero { grid-template-columns: minmax(0, 1fr); align-items: start; gap: 2rem; padding-top: 1.5rem; }
   .hero-card { max-width: 35rem; }
   .profile-photo { width: 10rem; height: 10rem; margin-bottom: 1rem; }
   .hero-role, .hero-copy { max-width: 100%; }
