@@ -50,6 +50,29 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   border: 2px solid var(--focus); border-radius: .5rem; background: var(--surface); color: var(--text);
 }
 .skip-link:focus { transform: translateY(0); }
+.entry-screen {
+  position: fixed; z-index: 100; inset: 0; display: grid; place-items: center;
+  padding: clamp(1rem, 5vw, 3rem); background: rgb(16 25 21 / 48%);
+  -webkit-backdrop-filter: blur(12px) saturate(.75); backdrop-filter: blur(12px) saturate(.75);
+}
+.entry-screen[hidden] { display: none; }
+.welcome-card {
+  width: min(100%, 48rem); padding: clamp(1.6rem, 6vw, 4rem); border: 1px solid var(--line);
+  border-radius: 1.25rem; background: color-mix(in srgb, var(--surface) 94%, transparent);
+  box-shadow: var(--shadow); animation: entry-rise .55s ease-out both;
+}
+.welcome-card h1 { margin-bottom: .8rem; font-size: clamp(3.2rem, 12vw, 6.5rem); }
+.entry-role { margin-bottom: 1rem; color: var(--accent-strong); font-size: clamp(1.2rem, 3vw, 1.6rem); font-weight: 700; }
+.entry-description { max-width: 40rem; margin-bottom: 1.8rem; color: var(--muted); font-size: 1.1rem; }
+.entry-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: .8rem; min-height: 3.2rem;
+  padding: .85rem 1.25rem; border: 2px solid var(--accent-strong); border-radius: .55rem;
+  background: var(--accent-strong); color: var(--page); font: inherit; font-weight: 750; cursor: pointer;
+}
+:root[data-theme="dark"] .entry-button { color: #101915; }
+.entry-button:hover { background: var(--surface); color: var(--accent-strong); }
+@keyframes entry-rise { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: translateY(0); } }
+body.entry-pending { overflow: hidden; }
 .site-header {
   position: fixed; z-index: 20; inset: 0 0 auto; min-height: 4.6rem;
   display: flex; align-items: center; justify-content: space-between; gap: 1.25rem;

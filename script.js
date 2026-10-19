@@ -1,5 +1,22 @@
 // Preferencias persistentes de tema y tamaño de texto; si localStorage no está disponible, se conserva el uso normal.
 (() => {
+  const entryScreen = document.querySelector("#entry-screen");
+  const enterButton = document.querySelector("#enter-site");
+  const pageRegions = [document.querySelector(".skip-link"), document.querySelector(".site-header"), document.querySelector(".accessibility-controls"), document.querySelector("main"), document.querySelector(".site-footer")];
+
+  document.body.classList.add("entry-pending");
+  pageRegions.forEach((region) => { region.inert = true; });
+  enterButton.focus();
+
+  enterButton.addEventListener("click", () => {
+    entryScreen.hidden = true;
+    document.body.classList.remove("entry-pending");
+    pageRegions.forEach((region) => { region.inert = false; });
+    document.querySelector("main").focus();
+  });
+})();
+
+(() => {
   const root = document.documentElement;
   const themeButton = document.querySelector("#theme-toggle");
   const themeIcon = themeButton.querySelector(".theme-icon");
