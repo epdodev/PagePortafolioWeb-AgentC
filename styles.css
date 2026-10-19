@@ -95,8 +95,7 @@ body.entry-pending { overflow: hidden; }
   background: var(--surface); color: var(--text); font: inherit; font-weight: 750; cursor: pointer;
 }
 .control-button:hover { border-color: var(--accent); background: var(--surface-alt); }
-.theme-button { display: grid; justify-items: center; gap: .1rem; padding: .25rem; }
-.theme-label { font-size: 1rem; line-height: 1.2; }
+.theme-button { display: grid; place-items: center; padding: .25rem; }
 .section-wrap { width: min(100% - 2rem, 70rem); margin-inline: auto; }
 .hero {
   display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(17rem, .8fr); align-items: center;
@@ -198,7 +197,6 @@ h1 span { color: var(--accent); }
   .skill-level { justify-self: start; }
   .language-list { grid-template-columns: 1fr; }
   .site-footer { flex-direction: column; }
-  .theme-label { display: none; }
   .accessibility-controls { gap: .25rem; }
 }
 @media (max-width: 360px) {
